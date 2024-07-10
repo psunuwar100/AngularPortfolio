@@ -1,0 +1,426 @@
+@import '_variable.scss';
+
+*{
+    box-sizing: border-box;
+    font-family: $font-primary;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $darkBlue;
+}
+
+//navbar ko scss
+header {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	padding: 0px 10px;
+}
+.logo {
+	img {
+		max-height: $font-logo;
+	}
+}
+.navbar {
+	.top {
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		li {
+			margin-left: 50px;
+			font-size: $font-size-extralarge;
+			.contact {
+				border: 2px solid $cyan;
+				border-radius: 5px;
+				padding: 10px 20px;
+			}
+		}
+	}
+	li {
+		a {
+			color: $white;
+			text-decoration: none;
+			font-weight: $font-regular;
+			background: linear-gradient(to left,$darkBlue 50%, $cyan 50%) right;
+			background-size: 250%;
+			transition: 0.5s ease-out;
+			padding: 10px;
+            &:hover {
+                background-color: $cyan;
+                color: $darkBlue;
+                border-radius: 5px;
+                background-position: left;
+            }
+		}
+	}
+}
+
+.sticky-nav {
+	position: fixed;
+	right: 50px;
+	bottom: 0px;
+	padding: 5px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: transparent;
+	img{ width: 35px;
+}
+} 
+	.sticky-nav {
+		a {
+			text-decoration: none;
+			margin: 10px 0 10px 0;
+		}
+	}
+
+
+//intro section ko
+
+.intro {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	color: $white;
+	margin: 0 0 6rem 0;
+}
+.content {
+	h1 {
+		font-size: $font-size-2xl-large;
+		font-weight: $font-light;
+	}
+	p {
+		margin: 0 0 10px 0;
+		font-size: $font-size-extralarge;
+		font-weight: $font-extralight;
+	}
+	ul {
+		li {
+			font-size: $font-size-extralarge;
+			font-weight: $font-extralight;
+		}
+	}
+}
+.image {
+	img {
+		width: 400px;
+		height: 450px;
+		display: block;
+		filter: grayscale(100%);
+		&:hover {
+			transition: 0.5s;
+			filter: grayscale(0%);
+		}
+	}
+}
+.buttons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+.btn {
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: $font-size-extralarge;
+}
+.btn.primary {
+	padding: 15px 40px;
+	background-color: $cyan;
+	border: 2px solid $cyan;
+	color: $darkBlue;
+	&:hover {
+		transition: 0.5s;
+		background-color: $darkBlue;
+		color: $white;
+	}
+}
+.btn.secondary {
+	padding: 15px 25px;
+	background-color: $darkBlue;
+	border: 2px solid $cyan;
+	border-radius: 5px;
+	color: $white;
+	text-decoration: none;
+	&:hover {
+		transition: 0.5s;
+		background-color: $cyan;
+		color: $black;
+	}
+}
+
+//details ko scss
+
+.services {
+	text-align: center;
+	color: $white;
+	h1 {
+		font-size: $font-size-2xl-large;
+		font-weight: $font-light;
+	}
+	p {
+		margin: auto;
+		width: 680px;
+		font-size: $font-size-large;
+		font-weight: $font-extralight;
+		margin-bottom: 40px;
+	}
+}
+.cards {
+	color: $white;
+	margin: 0 0 6rem 0;
+}
+.rows {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 5rem;
+}
+.card1 {
+	background-color: $darkPurple;
+	width: 350px;
+	height: 300px;
+	&:hover {
+		background-color: $lightPurple;
+		transition: 0.5s;
+	}
+	img {
+		height: 50px;
+		width: 45px;
+		margin: 50px 0 0 50px;
+	}
+	p {
+		font-size: $font-size-xl-large;
+		font-weight: $font-light;
+		align-items: center;
+		margin: 20px 0 0 50px;
+	}
+}
+.card2 {
+	background-color: $darkPurple;
+	width: 350px;
+	height: 300px;
+	&:hover {
+		background-color: $lightPurple;
+		transition: 0.5s;
+	}
+	img {
+		height: 50px;
+		width: 45px;
+		margin: 50px 0 0 50px;
+	}
+	p {
+		font-size: $font-size-xl-large;
+		font-weight: $font-light;
+		align-items: center;
+		margin: 20px 0 0 50px;
+	}
+}
+.card3 {
+	background-color: $darkPurple;
+	width: 350px;
+	height: 300px;
+	&:hover {
+		background-color: $lightPurple;
+		transition: 0.5s;
+	}
+	img {
+		height: 50px;
+		width: 45px;
+		margin: 50px 0 0 50px;
+	}
+	p {
+		font-size: $font-size-xl-large;
+		font-weight: $font-light;
+		align-items: center;
+		margin: 20px 0 0 50px;
+	}
+}
+
+//projects ko scss
+.project {
+	color: $white;
+	h1 {
+		font-size: $font-size-2xl-large;
+		font-weight: $font-light;
+		text-align: center;
+	}
+}
+.projectItems {
+	display: flex;
+	color: $white;
+	gap: 3rem;
+	margin: 0 0 8rem 0;
+	.todo1 {
+		width: 100%;
+		height: 400px;
+		img {
+			width: 100%;
+			height: 400px;
+			filter: grayscale(100%);
+			&:hover {
+				transition: 0.5s;
+				filter: grayscale(0%);
+			}
+		}
+	}
+	.todo2 {
+		width: 100%;
+		height: 400px;
+		img {
+			width: 100%;
+			height: 400px;
+			filter: grayscale(100%);
+			&:hover {
+				transition: 0.5s;
+				filter: grayscale(0%);
+			}
+		}
+	}
+}
+.todoContent1 {
+	width: 50%;
+	img{ width: 30px;
+    }
+	p {
+		font-size: $font-size-large;
+		font-weight: $font-extralight;
+	}
+		h1 {
+			font-size: $font-size-x-large;
+			font-weight: $font-light;
+			display: inline;
+		}
+	}
+
+	.todoContent2 {
+        width: 50%;
+        img{ width: 30px;
+        }
+		h1 {
+			font-size: $font-size-x-large;
+			font-weight: $font-light;
+			display: inline;
+		}
+	p {
+		font-size: $font-size-large;
+		font-weight: $font-extralight;
+	}
+}
+
+//contacts ko scss
+.getInTouch {
+	text-align: center;
+	color: $white;
+	display: inline;
+	h1 {
+		font-size: $font-size-2xl-large;
+		font-weight: $font-light;
+	}
+	p {
+		width: 100%;
+		font-size: $font-size-large;
+		font-weight: $font-extralight;
+		margin-bottom: 40px;
+	}
+}
+.information {
+	margin: 0 0 100px 0;
+}
+.formPage {
+	display: flex;
+    /* form ko input  */
+    input, textarea{
+        color: $white;
+        font-size: $font-size-medium;
+		border-radius: 5px;
+        }
+    button{
+        font-size: $font-size-medium;     
+    }
+
+.info {
+	width: 100%;
+	.fullName {
+		background: transparent;
+		border: 2px solid $cyan;
+		width: 95%;
+		height: 50px;
+		margin: 0 0 25px 0;
+		padding: 1rem;
+		&::placeholder {
+			font-size: $font-size-medium;
+		}
+	}
+}
+.email {
+	background: transparent;
+	border: 2px solid $cyan;
+	width: 95%;
+	height: 50px;
+	margin: 0 0 25px 0;
+	padding: 1rem;
+	&::placeholder {
+		font-size: $font-size-medium;
+	}
+}
+.pNumber {
+	background: transparent;
+	border: 2px solid $cyan;
+	width: 95%;
+	height: 50px;
+	margin: 0 0 25px 0;
+	padding: 1rem;
+	&::placeholder {
+		font-size: $font-size-medium;
+	}
+}
+
+.message {
+	width: 100%;
+	.yourMessage {
+		background: transparent;
+		border: 2px solid $cyan;
+		height: 125px;
+		width: 100%;
+		margin: 0 0 18px 0;
+		padding: 1rem;
+	
+	&::placeholder {
+		font-size: $font-size-medium;
+	}
+}
+}
+.submitButton {
+		color: $darkBlue;
+		border: 2px solid $cyan;
+		border-radius: 5px;
+		background-color: $cyan;
+		height: 50px;
+		width: 100%;
+
+	&:hover {
+		background: transparent;
+		border: 2px solid $cyan;
+		color: $cyan;
+		transition: 0.5s;
+	}
+}
+}
+
+
+//footer ko scss
+.designer {
+	color: $white;
+	font-size: $font-size-medium;
+	font-weight: $font-light;
+	text-align: center;
+	margin: auto;
+	width: 400px;
+	&:hover {
+		color: $cyan;
+		cursor: default;
+	}
+}
