@@ -1,4 +1,5 @@
 @import '_variable.scss';
+@import '_form.scss';
 
 *{
     box-sizing: border-box;
@@ -11,20 +12,36 @@ body {
     background-color: $darkBlue;
 }
 
+::-webkit-scrollbar{
+    width: 0.5rem;
+ }
+::-webkit-scrollbar-track{
+    background-color: $darkBlue;
+}
+::-webkit-scrollbar-thumb{
+    background-color: $cyan;
+    border-radius:10px ;
+}
+
+
 //navbar ko scss
-header {
+.navbar {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
 	align-items: center;
 	padding: 0px 10px;
-}
-.logo {
-	img {
-		max-height: $font-logo;
+	position: fixed;
+	width: 100%;
+	z-index: 1000;
+	background-color: $darkBlue;
+
+	.logo {
+		img {
+			// position: fixed;
+			max-height: $font-logo;
+		}
 	}
-}
-.navbar {
 	.top {
 		list-style: none;
 		display: flex;
@@ -32,11 +49,11 @@ header {
 		li {
 			margin-left: 50px;
 			font-size: $font-size-extralarge;
-			.contact {
-				border: 2px solid $cyan;
-				border-radius: 5px;
-				padding: 10px 20px;
-			}
+			// &.contact{
+				// border: 2px solid $cyan;
+				// border-radius: 5px;
+				// padding: 0px 10px;
+			// }
 		}
 	}
 	li {
@@ -77,15 +94,14 @@ header {
 		}
 	}
 
-
 //intro section ko
-
 .intro {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	color: $white;
-	margin: 0 0 6rem 0;
+	margin: 6rem 0 6rem 0;
+
 }
 .content {
 	h1 {
@@ -116,41 +132,7 @@ header {
 		}
 	}
 }
-.buttons {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 20px;
-}
-.btn {
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	font-size: $font-size-extralarge;
-}
-.btn.primary {
-	padding: 15px 40px;
-	background-color: $cyan;
-	border: 2px solid $cyan;
-	color: $darkBlue;
-	&:hover {
-		transition: 0.5s;
-		background-color: $darkBlue;
-		color: $white;
-	}
-}
-.btn.secondary {
-	padding: 15px 25px;
-	background-color: $darkBlue;
-	border: 2px solid $cyan;
-	border-radius: 5px;
-	color: $white;
-	text-decoration: none;
-	&:hover {
-		transition: 0.5s;
-		background-color: $cyan;
-		color: $black;
-	}
-}
+
 
 //details ko scss
 
@@ -169,18 +151,25 @@ header {
 		margin-bottom: 40px;
 	}
 }
-.cards {
+.rows {
 	color: $white;
 	margin: 0 0 6rem 0;
+	cursor: pointer;
 }
-.rows {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 5rem;
+.cards {
+	// display: grid;
+	// grid-template-columns: repeat(3, 1fr);
+	// gap: 3rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	:hover{
+		transform: scale(1.05);
+	}
 }
 .card1 {
 	background-color: $darkPurple;
-	width: 350px;
+	width: 300px;
 	height: 300px;
 	&:hover {
 		background-color: $lightPurple;
@@ -200,7 +189,7 @@ header {
 }
 .card2 {
 	background-color: $darkPurple;
-	width: 350px;
+	width: 300px;
 	height: 300px;
 	&:hover {
 		background-color: $lightPurple;
@@ -220,7 +209,7 @@ header {
 }
 .card3 {
 	background-color: $darkPurple;
-	width: 350px;
+	width: 300px;
 	height: 300px;
 	&:hover {
 		background-color: $lightPurple;
@@ -259,6 +248,7 @@ header {
 		img {
 			width: 100%;
 			height: 400px;
+			cursor: pointer;
 			filter: grayscale(100%);
 			&:hover {
 				transition: 0.5s;
@@ -272,6 +262,7 @@ header {
 		img {
 			width: 100%;
 			height: 400px;
+			cursor: pointer;
 			filter: grayscale(100%);
 			&:hover {
 				transition: 0.5s;
@@ -309,7 +300,72 @@ header {
 		font-weight: $font-extralight;
 	}
 }
-
+.projects-container {
+    text-align: center;
+	margin: 0 0 6rem 0;
+    background-color: $darkBlue;
+    color: $white;
+  
+    .title {
+		font-size: $font-size-xl-large;
+		font-weight: $font-light;
+		text-align: center;
+    }
+  
+    .projects {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+  
+      .project-card {
+        background-color: $darkPurple;
+        border-radius: 5px;
+        padding: 20px;
+        margin: 10px;
+        width: 300px;
+		&:hover {
+			background-color: $lightPurple;
+			transition: 0.5s;
+			transform: scale(1.05);
+		  }
+  
+        .project-icon {
+          font-size: 3rem;
+		  text-align: start;
+          margin-bottom: 10px;
+        }
+  
+        .project-title {
+			font-size: $font-size-x-large;
+			font-weight: $font-regular;
+			text-align: start;
+			margin: 10px 0;
+        }
+  
+        .project-description {
+			font-size: $font-size-medium;
+			font-weight: $font-extralight;
+			text-align: start;
+          margin-bottom: 20px;
+        }
+  
+        .project-links {
+			text-align: start;
+          a {
+            color: $white;
+            font-size: 1.5rem;
+          }
+        }
+  
+        .project-tags {
+          font-size: $font-size-medium;
+		  font-weight: $font-extralight;
+          color: $white;
+        }
+      }
+    }
+  }
+  
 //contacts ko scss
 .getInTouch {
 	text-align: center;
@@ -326,90 +382,68 @@ header {
 		margin-bottom: 40px;
 	}
 }
+
 .information {
 	margin: 0 0 100px 0;
-}
-.formPage {
 	display: flex;
-    /* form ko input  */
-    input, textarea{
-        color: $white;
-        font-size: $font-size-medium;
-		border-radius: 5px;
-        }
-    button{
-        font-size: $font-size-medium;     
-    }
+	flex-direction: column;
+	align-items: center;
 
-.info {
-	width: 100%;
+.formPage {
+    /* form ko input  */
+    // input, textarea{
+    //     color: $white;
+    //     font-size: $font-size-medium;
+	// 	border-radius: 5px;
+    //     }
+
+
+	.info {
+	width: 950px;
+	
 	.fullName {
 		background: transparent;
 		border: 2px solid $cyan;
-		width: 95%;
 		height: 50px;
-		margin: 0 0 25px 0;
 		padding: 1rem;
 		&::placeholder {
 			font-size: $font-size-medium;
 		}
 	}
-}
-.email {
+
+	.email {
 	background: transparent;
 	border: 2px solid $cyan;
-	width: 95%;
 	height: 50px;
-	margin: 0 0 25px 0;
 	padding: 1rem;
 	&::placeholder {
 		font-size: $font-size-medium;
 	}
 }
-.pNumber {
+	.pNumber {
 	background: transparent;
 	border: 2px solid $cyan;
-	width: 95%;
 	height: 50px;
-	margin: 0 0 25px 0;
 	padding: 1rem;
 	&::placeholder {
 		font-size: $font-size-medium;
 	}
 }
 
-.message {
-	width: 100%;
+// .message {
 	.yourMessage {
 		background: transparent;
 		border: 2px solid $cyan;
-		height: 125px;
-		width: 100%;
-		margin: 0 0 18px 0;
 		padding: 1rem;
 	
 	&::placeholder {
 		font-size: $font-size-medium;
 	}
 }
-}
-.submitButton {
-		color: $darkBlue;
-		border: 2px solid $cyan;
-		border-radius: 5px;
-		background-color: $cyan;
-		height: 50px;
-		width: 100%;
-
-	&:hover {
-		background: transparent;
-		border: 2px solid $cyan;
-		color: $cyan;
-		transition: 0.5s;
-	}
+// }
 }
 }
-
+}
 
 //footer ko scss
 .designer {

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { nav_ul } from '../array/dataArray';
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-
+[x: string]: any;
+  nav_ul = nav_ul
+nav_item: any;
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }

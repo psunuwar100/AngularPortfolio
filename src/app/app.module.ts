@@ -7,7 +7,9 @@ import { IntroComponent } from './components/intro/intro.component';
 import { DetailsComponent } from './components/details/details.component';
 import { ProjectComponent } from './components/project/project.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ContactComponent } from './components/contact/contact.component';
+import { ContactFormComponent } from './components/contact/contact.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ButtonComponent } from './components/button/button.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,14 @@ import { ContactComponent } from './components/contact/contact.component';
     IntroComponent,
     DetailsComponent,
     ProjectComponent,
-    ContactComponent,
-    FooterComponent
+    ContactFormComponent,
+    FooterComponent,
+    ButtonComponent,
+
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

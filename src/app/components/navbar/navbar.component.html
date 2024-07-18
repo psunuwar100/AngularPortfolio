@@ -1,16 +1,19 @@
 <header id="home">
-    <div class="logo">
-        <img src="../../assets/images/logo2.png" alt="Logo">
-    </div>
-    <nav class="navbar">
-        <ul class="top">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#works">Works</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact" class="contact">Contact</a></li>
-        </ul>
+  <nav class="navbar">
+      <div class="logo">
+          <img src="../../assets/images/logo2.png" alt="Logo">
+      </div>
+        
+      <div>
+        <ul  class="top">
+            <li *ngFor="let item of nav_ul" [ngClass]="{'contact': item.label === 'Contact'}">
+              <a  class="nav-a" href="#{{ item.route }}" >{{ item.label }}</a>
+              <!-- <img src="{{item.Image}}" alt="" srcset=""> -->
+            </li>
+          </ul>
+        </div>
     </nav>
+
 
     <nav class="sticky-nav">
         <a href="https://www.linkedin.com/in/prashansa-sunuwar-0b2ba9285" target="_blank"><img src="../../assets/images/linkedin.png" alt="linkedin"></a>

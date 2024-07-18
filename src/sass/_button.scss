@@ -1,0 +1,74 @@
+@import '_variable.scss';
+
+.buttons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+.btn {
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: $font-size-extralarge;
+}
+.btn.primary {
+	padding: 15px 40px;
+	background-color: $cyan;
+	border: 2px solid $cyan;
+	color: $darkBlue;
+	&:hover {
+		transition: 0.5s;
+		background-color: $darkBlue;
+		color: $white;
+	}
+}
+.btn.secondary {
+	padding: 15px 25px;
+	background-color: $darkBlue;
+	border: 2px solid $cyan;
+	border-radius: 5px;
+	color: $white;
+	text-decoration: none;
+	&:hover {
+		transition: 0.5s;
+		background-color: $cyan;
+		color: $black;
+	}
+}
+
+button{
+    font-size: $font-size-medium;
+}
+
+.submitButton {
+	color: $darkBlue;
+	border: 2px solid $cyan;
+	border-radius: 5px;
+	background-color: $cyan;
+    height: 50px;
+
+	&:hover {
+		background: transparent;
+		border: 2px solid $cyan;
+		color: $cyan;
+		transition: 0.5s;
+	}
+}
+
+.show-more {
+	margin-top: 30px;
+	padding: 10px 20px;
+	background-color: $cyan;
+	border: 2px solid $cyan;
+	border-radius: 5px;
+	color: $darkBlue;
+	font-size: $font-size-large;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+
+	&:hover {
+	  background-color: $darkBlue;
+	  color: $cyan;
+
+	}
+  }

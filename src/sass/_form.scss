@@ -1,0 +1,25 @@
+ @import '_variable.scss';
+
+ .form-group {
+  padding-bottom: 12px;
+        input,
+        textarea {
+          width: 100%;
+        	// margin: 0 0 0.875rem 0;
+          border-radius: 5px;
+          color: $white;
+          font-size: $font-size-medium;
+          }
+          
+        .error {
+          color: $red;
+          font-size: 0.875em;
+          margin: 12px;
+
+        }
+      }
+      
+
+
+// Media query for responsive design
+  // @media (max-width: 768px) {}

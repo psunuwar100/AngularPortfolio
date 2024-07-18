@@ -4,16 +4,107 @@
         question or just want to say hi, I'll try my best to get back to you!</p>
 </section>
 
-<section class="information">
-    <form action="" class="formPage">
+ <section class="information">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="formPage" >
         <div class="info">
-            <input type="text" class="fullName" placeholder="Full name"><br>
-            <input type="email" class="email" placeholder="Email"><br>
-            <input type="tel" class="pNumber" placeholder="Phone no.">
+            <div class="form-group">
+              <input type="text" id="name" class="fullName" formControlName="name" placeholder="Full name"/>
+              <div
+                *ngIf="
+                  contactForm.get('name')?.invalid &&
+                  (contactForm.get('name')?.dirty ||
+                    contactForm.get('name')?.touched)
+                "
+              >
+                <small
+                  class="error"
+                  *ngIf="contactForm.get('name')?.errors?.['required']"
+                >
+                  Name is required.
+                </small>
+                <small
+                  class="error"
+                  *ngIf="contactForm.get('name')?.errors?.['minlength=3']"
+                >
+                  Name must be at least 3 characters long.
+                </small>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <input type="email" id="email" formControlName="email" class="email" placeholder="Email"/>
+              <div
+                *ngIf="
+                  contactForm.get('email')?.invalid &&
+                  (contactForm.get('email')?.dirty ||
+                    contactForm.get('email')?.touched)
+                "
+              >
+                <small
+                  class="error"
+                  *ngIf="contactForm.get('email')?.errors?.['required']"
+                >
+                  Email is required.
+                </small>
+                <small
+                  class="error"
+                  *ngIf="contactForm.get('email')?.errors?.['email']"
+                >
+                  Invalid email format.
+                </small>
+              </div>
+            </div>
+
+            <div class="form-group">
+                <input type="tel" id="pNumber" formControlName="pNumber" class="pNumber" placeholder="Phone no."/>
+                <div
+                  *ngIf="
+                    contactForm.get('pNumber')?.invalid &&
+                    (contactForm.get('pNumber')?.dirty ||
+                      contactForm.get('pNumber')?.touched)
+                  "
+                >
+                  <small
+                    class="error"
+                    *ngIf="contactForm.get('pNumber')?.errors?.['required']"
+                  >
+                    Phone Number is required.
+                  </small>
+                  <small
+                    class="error"
+                    *ngIf="contactForm.get('pNumber')?.errors?.['Number']"
+                  >
+                    Invalid Phone Number format.
+                  </small>
+                </div>
+              </div>
+        
+        <!-- <div class="message"> -->
+            <div class="form-group">
+              <textarea
+                id="message"
+                formControlName="message"
+                class="yourMessage" rows="5" cols="20" placeholder="Your Message...."
+              ></textarea>
+              <div
+                *ngIf="
+                  contactForm.get('message')?.invalid &&
+                  (contactForm.get('message')?.dirty ||
+                    contactForm.get('message')?.touched)
+                "
+              >
+                <small
+                  class="error"
+                  *ngIf="contactForm.get('message')?.errors?.['required']"
+                >
+                  Message is required.
+                </small>
+              </div>
+            </div>
+            <!-- <button type="submit" class="submitButton">Send Message</button> -->
+            <app-button label="Send Message" type="submit" additionalClasses="submitButton"></app-button>
+            <!-- </div> -->
         </div>
-        <div class="message">
-            <textarea class="yourMessage" rows="5" cols="50" placeholder="Your Message...."></textarea><br>
-            <button type="submit" class="submitButton">Send Your Message</button>
-        </div>
-    </form>
-</section>
+     </form>
+        
+  </section>

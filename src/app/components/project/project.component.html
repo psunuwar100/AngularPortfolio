@@ -4,15 +4,16 @@
 <!-- p1 vaneko project 1 -->
 <div class="projectItems">
     <section class="todo1">
-        <img src="../../assets/images/todo1.png" alt="todo project">
+        <img src="../../assets/images/expense.png" alt="expense project">
     </section>
     <section class="todoContent1">
-        <h1>To-Do Project</h1>
+        <h1>Expense Tracker</h1>
         <p>A nicer look at my GitHub profile and repository stats with data visualizations of your top languages
             and stars. Sort through your top repos by number of stars, forks, and size.</p>
-        <a href="https://github.com/psunuwar100/Laravel-todo" target="_blank"><img src="../../assets/images/github.png" class="githubLogo1" alt="github-logo" ></a>
+        <a href="https://github.com/psunuwar100/ExpenseTracker-React" target="_blank"><img src="../../assets/images/github.png" class="githubLogo1" alt="github-logo" ></a>
     </section>
 </div>
+
 <div class="projectItems">
     <section class="todoContent2">
         <h1>Job Portal System</h1>
@@ -25,16 +26,37 @@
         <img src="../../assets/images/jobPortal.png" alt="todo project">
     </section>
 </div>
+
 <div class="projectItems">
     <section class="todo1">
-        <img src="../../assets/images/expense.png" alt="expense project">
+        <img src="../../assets/images/todo1.png" alt="todo project">
     </section>
     <section class="todoContent1">
-        <h1>Expense Tracker</h1>
+        <h1>To-Do Project</h1>
         <p>A nicer look at my GitHub profile and repository stats with data visualizations of your top languages
             and stars. Sort through your top repos by number of stars, forks, and size.</p>
-        <a href="https://github.com/psunuwar100/ExpenseTracker-React" target="_blank"><img src="../../assets/images/github.png" class="githubLogo1" alt="github-logo" ></a>
+        <a href="https://github.com/psunuwar100/Laravel-todo" target="_blank"><img src="../../assets/images/github.png" class="githubLogo1" alt="github-logo" ></a>
     </section>
 </div>
 
-</section>
+<div class="projects-container">
+  <h2 class="title">Other NoteWorthy Projects</h2>
+  <div class="projects">
+    <div class="project-card" *ngFor="let project of projects" data-aos="zoom-in">
+      <div class="project-icon">
+        <i class="fas fa-folder"></i>
+      </div>
+      <h3 class="project-title">{{ project.title }}</h3>
+      <p class="project-description">{{ project.description }}</p>
+      <div class="project-links">
+        <a href="{{ project.githubLink }}" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <span class="project-tags">{{ project.tags }}</span>
+    </div>
+  </div>
+  <!-- <button class="show-more">Show More</button> -->
+  <app-button label="Show More" type="button" additionalClasses="show-more"></app-button>
+
+</div>

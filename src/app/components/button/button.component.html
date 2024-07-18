@@ -1,0 +1,6 @@
+
+<!-- <button class="{{ additionalClasses }}" (click)="handleClick()">
+  <span>{{ label }}</span>
+</button> -->
+
+<button  [ngClass]="additionalClasses" (click)="handleClick()">{{ label }}</button>
