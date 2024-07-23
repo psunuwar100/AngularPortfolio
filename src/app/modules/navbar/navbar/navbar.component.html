@@ -2,16 +2,16 @@
   <nav class="navbar">
       <div class="logo">
           <img src="../../assets/images/logo2.png" alt="Logo">
-      </div>
-        
+      </div>  
+    
       <div>
         <ul  class="top">
-            <li *ngFor="let item of nav_ul" [ngClass]="{'contact': item.label === 'Contact'}">
+            <li *ngFor="let item of nav_ul">
               <a  class="nav-a" href="#{{ item.route }}" >{{ item.label }}</a>
-              <!-- <img src="{{item.Image}}" alt="" srcset=""> -->
             </li>
           </ul>
         </div>
+        
     </nav>
 
 
