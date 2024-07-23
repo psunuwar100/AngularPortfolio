@@ -1,5 +1,5 @@
 import { Component, ElementRef } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-contact-form',
@@ -27,7 +27,7 @@ export class ContactFormComponent {
       // this.contactForm.reset();
     } else {
       // Handle invalid form submission (if needed)
-      window.alert('Please fill out the form correctly.');
+      window.alert('Please fill out the form properly.');
     }
   }
 
