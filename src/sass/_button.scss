@@ -72,3 +72,29 @@ button{
 
 	}
   }
+
+
+  @media (max-width: 768px) {
+	.buttons {
+	//   flex-direction: column;
+	display: flex;
+	justify-content: space-evenly;
+	}
+  
+	.btn {
+	  font-size: 1rem; /* Smaller font size */
+	}
+  
+	.btn.primary, .btn.secondary{
+	  padding: 10px 25px; /* Further adjust padding */
+	}
+	
+	  .submitButton {
+		height: 40px; /* Increase height for larger screens */
+	  }
+	
+	  .show-more {
+		font-size: 15px; /* Increase font size for larger screens */
+	  }
+	}
+  

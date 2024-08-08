@@ -1,10 +1,15 @@
 <header id="home">
   <nav class="navbar">
       <div class="logo">
-          <img src="../../assets/images/logo2.png" alt="Logo">
-      </div>  
+          <img src="../../assets/images/ps.png" alt="Logo">
+      </div> 
     
       <div>
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
         <ul  class="top">
             <li *ngFor="let item of nav_ul">
               <a  class="nav-a" href="#{{ item.route }}" >{{ item.label }}</a>

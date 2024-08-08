@@ -1,5 +1,5 @@
 <section class="project" id="projects">
-    <h1>Projects</h1>
+    <h1 class="projectHeading">Projects</h1>
 
 <!-- p1 vaneko project 1 -->
 <div class="projectItems">
@@ -43,6 +43,7 @@
   <h2 class="title">Other NoteWorthy Projects</h2>
   <div class="projects">
     <div class="project-card" *ngFor="let project of projects" data-aos="zoom-in">
+      <div class="otherProjectContent">
       <div class="project-icon">
         <i class="fas fa-folder"></i>
       </div>
@@ -54,6 +55,7 @@
         </a>
       </div>
       <span class="project-tags">{{ project.tags }}</span>
+      </div>
     </div>
   </div>
   <!-- <button class="show-more">Show More</button> -->

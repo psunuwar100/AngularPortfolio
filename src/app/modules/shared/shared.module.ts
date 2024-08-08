@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { IntroComponent } from './intro/intro.component';
 import { ProjectComponent } from './project/project.component';
 import { ContactFormComponent } from './contact/contact.component';
-import { ButtonComponent } from '../button/button/button.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ButtonComponent } from '../button/button/button.component';
 
 
 
